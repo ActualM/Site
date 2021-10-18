@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>EC-World</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>EC-World</span>
+    </div>
+    <div id="about">
+      <a href="#" onclick="slowScroll('#top')">Главная</a>
+      <a href="#" onclick="slowScroll('#main')">Электромобили</a>
+      <a href="#" onclick="slowScroll('#design')">Дизайн</a>
+      <a href="#" onclick="slowScroll('#contacts')">Контакты</a>
+      <a href="#" onclick="slowScroll('#faq')">Экология</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>“Электромобили - наше будущее”</h1>
+    <h3>Узнай больше об их влиянии на экологию нашей планеты.</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>Tesla - электрокар будущего</h2>
+      <span>Общая характеристика</span>
+    </div>
+    <div class="text">
+      <span><p1>Все модели электромобилей Tesla являются по-своему уникальными. Их главная особенность заключается в использовании самых передовых технологий. </p1>
+        <p2>Благодаря умопомрачительному крутящему моменту в 10 000 Hm электрокар становится самым мощным автомобилем в мире, с максимально быстрым разгоном до 100 км/ч.</p2>
+      </span>
+    </div>
+  </div>
+
+  <div id="design">
+    <h2>Экстерьер и Интерьер</h2>
+    <h4>Эстетичность и практичность – это главные правила любого салона автомобиля. И в электрокарах от «Тесла» салон продуман до мелочей. </h4>
+    
+
+    <div class="img">
+      <img src="img/car3.png" alt="">
+      <span>Дизайн кузова</span>
+    </div>
+    <div class="img">
+      <img src="img/car4.png" alt="">
+      <span>Дизайн салона</span>
+    </div>
+  </div>
+
+  <div id="contacts">
+    <center><h5>Задавайте вопросы!</h5></center>
+    <form id="form_input">
+      <label for="name">Имя <span></span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Ваша почта <span></span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Сообщение <span></span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+  <div id="faq">
+    <div>
+      <span class="title"></span><br>
+      <span class="heading">Выхлопы углекислого газа и других вредных веществ в атмосферу из наших обычных автомобилей - огромная проблема человечества.</span>
+      <p></p>
+      <span class="heading">Существует риск, что такие выхлопы от традиционных бензиновых и дизельных двигателей однажды приведут планету к точке невозврата.</span>
+      </div>
+    <div>
+      <span class="title">Уровень выброса таких веществ совершенно неприемлем.</span><br>
+      <p></p>
+      <span class="title">Мы просто обязаны использовать электромобили вместо обычных машин.</span>
+      </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
